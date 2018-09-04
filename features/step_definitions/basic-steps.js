@@ -1,9 +1,5 @@
 const { After, Given, Then, When } = require("cucumber");
 
-After(async function() {
-    return await this.closedHomePage()
-})
-
 Given("I visit the site", async function() {
   return await this.openHomePage()
 })
@@ -26,4 +22,8 @@ Then('I should have {int} contact in my address book', async function(int) {
 
 Then('I should not see {string}', async function(string) {
     return 'pending'
+})
+
+After(async function() {
+    return await this.closeHomePage()
 })
