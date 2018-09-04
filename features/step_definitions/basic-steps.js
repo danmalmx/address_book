@@ -1,19 +1,19 @@
 const { After, Given, Then, When } = require("cucumber");
 
 Given("I visit the site", async function() {
-  return await this.openHomePage()
+  return await this.openHomePage();
 })
 
 Then("I should see {string}", async function(content) {
   return await this.pageHasTextContent(content);
 })
 
-When('I click {string}', async function(string) {
-    return await this.clickOnAddContactBtn()
+When('I click {string}', async function(btnName) {
+    return await this.clickOnButton(btnName);
 })
 
 Then('I fill in {string} with {string}', async function(field, content) {
-    return await this.fillFormField(field.toLowerCase(), content)
+    return await this.fillFormField(field.toLowerCase(), content);
 })
 
 Then('I should have {int} contact in my address book', async function(int) {
@@ -25,5 +25,5 @@ Then('I should not see {string}', async function(string) {
 })
 
 After(async function() {
-    return await this.closeHomePage()
+    return await this.closeHomePage();
 })
