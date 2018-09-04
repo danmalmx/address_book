@@ -23,7 +23,13 @@ class AddressBookWorld {
             
                 expect(actualContent).to.be.eq(expectedContent)    
             }
-}
 
+        async pageHasTextContent(expectedContent) {
+            const pageContent = await this.page.content()
+            const actualContent = pageContent.match(expectedContent)[0]
+        }
+
+        
+    }
 
 setWorldConstructor(AddressBookWorld);
