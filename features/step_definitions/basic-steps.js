@@ -16,8 +16,8 @@ Then('I fill in {string} with {string}', async function(field, content) {
     return await this.fillFormField(field.toLowerCase(), content)
 })
 
-Then('I should have {int} contact in my address book', async function(int) {
-    return 'pending'
+Then('I should have {int} contact in my address book', async function(storage) {
+    return await this.addContactForm(storage)
 })
 
 Then('I should not see {string}', async function(string) {
@@ -27,3 +27,4 @@ Then('I should not see {string}', async function(string) {
 After(async function() {
     return await this.closeHomePage()
 })
+
