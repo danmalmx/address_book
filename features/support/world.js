@@ -44,10 +44,11 @@ class AddressBookWorld {
                     return '.save-contact'
                     break
                 default: 
-                throw `${btnName} button is not defined`
-                break
+                    throw `${btnName} button is not defined`
+                    break
             }
         }
+
     }
 
 setWorldConstructor(AddressBookWorld);
