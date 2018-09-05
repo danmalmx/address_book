@@ -1,9 +1,44 @@
+const storage = window.localStorage
+
+const renderContacts = () => {
+const contact = JSON.parse(storage.getItem('contacts'))
+let div = document.querySelector('.contact-list')
+if (contacts) {
+    div.innerHTML = ''
+    const ul = document.createElement('ul')
+    contacts.forEach(contact => {
+        let li = document.createElement('li')
+        li.innerHTML = `
+          <div class="card">
+            <div class="image">
+              <img src="https://ca-address-book.herokuapp.com/images/pine.jpg" />
+            </div>
+            <div class="content">
+              <h1>${ contact.name }</h1>
+              <h2>${ contact.company }</h2>
+              <p>${ contact.notes }</p> 
+              ${ contact.email } | 
+              <a href="https://www.twitter.com/${ contact.twitter}">@${contact.twitter}</a>
+            </div>
+          </div>
+       `
+        // Add the contact's li to the unordered list we created earlier
+        ul.appendChild(li)
+      })
+  
+      // Lastly, append the list to the contact-list container.
+      div.appendChild(ul) 
+    } else { 
+      div.innerHTML = '<p>You have no contacts in your address book</p>' 
+    }
+  }
+  
+
 document.addEventListener('DOMContentLoaded', () =>{
     const addContactForm = document.querySelector('.new-contact-form')
-
     addContactForm.addEventListener('submit', event => {
         event.preventDefault()
-        const storage = window.localStorage
+        
 
         const{
             name,
@@ -12,7 +47,7 @@ document.addEventListener('DOMContentLoaded', () =>{
             company,
             notes,
             twitter,
-        } = addContactForm.nextElement
+        } = addContactForm.elements
 
         const contact = {
             id: Date.now(),
@@ -23,7 +58,8 @@ document.addEventListener('DOMContentLoaded', () =>{
             notes: notes.value,
             twitter: twitter.value,
         }
-
+        let contacts = JSON.parse(storage.getItem('contacts')) || []
+        contact.push(contact)
         console.log(`Saving the following contact: ${JSON.stringify(contact)}`)
         storage.setItem('contacts', JSON.stringify([contact]))
     })
