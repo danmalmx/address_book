@@ -65,8 +65,6 @@ class AddressBookWorld {
             }
         }
 
-   
-
     }
 
 setWorldConstructor(AddressBookWorld);
