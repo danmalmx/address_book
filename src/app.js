@@ -22,11 +22,9 @@ if (contacts) {
             </div>
           </div>
        `
-        // Add the contact's li to the unordered list we created earlier
         ul.appendChild(li)
       })
-  
-      // Lastly, append the list to the contact-list container.
+
       div.appendChild(ul) 
     } else { 
       div.innerHTML = '<p>You have no contacts in your address book</p>' 
@@ -59,8 +57,8 @@ document.addEventListener('DOMContentLoaded', () =>{
             twitter: twitter.value,
         }
         let contacts = JSON.parse(storage.getItem('contacts')) || []
-        contact.push(contact)
+        contacts.push(contact)
         console.log(`Saving the following contact: ${JSON.stringify(contact)}`)
-        storage.setItem('contacts', JSON.stringify([contact]))
+        storage.setItem('contacts', JSON.stringify([contacts]))
     })
 })

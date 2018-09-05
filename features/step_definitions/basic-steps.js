@@ -8,8 +8,8 @@ Then("I should see {string}", async function(content) {
   return await this.pageHasTextContent(content);
 })
 
-When('I click {string}', async function(string) {
-    return await this.clickOnButton(string);
+When('I click {string}', async function(btnName) {
+    return await this.clickOnButton(btnName);
 })
 
 Then('I fill in {string} with {string}', async function(field, content) {
