@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', () =>{
             notes: notes.value,
             twitter: twitter.value,
         }
-        
+
         console.log(`Saving the following contact: ${JSON.stringify(contact)}`)
 
         let contacts = JSON.parse(storage.getItem('contacts')) || []
