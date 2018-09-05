@@ -20,6 +20,8 @@ class AddressBookWorld {
         async pageHasTextContent(expectedContent) {
             const pageContent = await this.page.content()
             const actualContent = pageContent.match(expectedContent)[0]
+
+            expect(actualContent).to.be.eq(expectedContent)
         }
 
         async clickOnButton(btnName) {
@@ -37,7 +39,7 @@ class AddressBookWorld {
 
         async checkContactStorageCount (expectedCount) {
             const actualCount = await this.page.evaluate(
-                () => JSON.parse(window.localStorage.getItem('contact')).length
+                () => JSON.parse(window.localStorage.getItem('contacts')).length
             )
             expect(actualCount).to.be.eq(expectedCount)
         }

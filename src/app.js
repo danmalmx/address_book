@@ -1,7 +1,7 @@
 const storage = window.localStorage
 
 const renderContacts = () => {
-const contact = JSON.parse(storage.getItem('contacts'))
+const contacts = JSON.parse(storage.getItem('contacts'))
 let div = document.querySelector('.contact-list')
 if (contacts) {
     div.innerHTML = ''
@@ -33,6 +33,7 @@ if (contacts) {
   
 
 document.addEventListener('DOMContentLoaded', () =>{
+    renderContacts()
     const addContactForm = document.querySelector('.new-contact-form')
     addContactForm.addEventListener('submit', event => {
         event.preventDefault()
@@ -56,9 +57,12 @@ document.addEventListener('DOMContentLoaded', () =>{
             notes: notes.value,
             twitter: twitter.value,
         }
+        
+        console.log(`Saving the following contact: ${JSON.stringify(contact)}`)
+
         let contacts = JSON.parse(storage.getItem('contacts')) || []
         contacts.push(contact)
-        console.log(`Saving the following contact: ${JSON.stringify(contact)}`)
-        storage.setItem('contacts', JSON.stringify([contacts]))
+        storage.setItem('contacts', JSON.stringify(contacts))
+        renderContacts()
     })
 })
