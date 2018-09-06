@@ -5,34 +5,46 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link  href="https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css"  rel="stylesheet">
   <title>Address book</title>
 </head>
 
 <body>
-  <h1>Contacts</h1>
-  <button class="add-contact">Add Contact</button>
-  
- 
-  <form class="new-contact-form" action="#">
-      <label for="name">Name</label>
-      <input id="contact-name" name="name" type="text">
-      <label for="email">Email</label>
-      <input id="contact-email" name="email" type="email">
-      <label for="phone">Phone</label>
-      <input id="contact-phone" name="phone" type="text">
-      <label for="company">Company</label>
-      <input id="contact-company" name="company" type="text">
-      <label for="notes">Notes</label>
-      <textarea id="contact-notes" name="notes" type="text"></textarea>
-      <label for="twitter">Twitter</label>
-      <input id="contact-twitter" name="twitter" type="text">
-      <input class="save-contact" type="submit" value="Save contact">
-    </form>
-  
-  
-  <script src="./dist/bundle.js"></script>
-  <div class="contact-list">
-
+  <div class="w-full bg-white rounded shadow-lg p-8 m-4 md:max-w-sm md:mx-auto">
+    <h1 class="block w-full text center text-grey-darkest mb-6">Contacts</h1>    
+    <form class="new-contact-form mb-6" action="#">
+      <div class="flex flex-col mb-4" 
+            <label class="mb-2 uppercase font-bold text-lg text-grey-darkest" for="name">Name</label>
+            <input class="border py-2 px-3 text-grey-darkest" id="contact-name" name="name" type="text">
+      </div>
+      <div class="flex flex-col mb-4" 
+          <label class="mb-2 uppercase font-bold text-lg text-grey-darkest" for="email">Email</label>
+          <input class="border py-2 px-3 text-grey-darkest" id="contact-email" name="email" type="email">
+      </div>
+      <div class="flex flex-col mb-4" 
+          <label class="mb-2 uppercase font-bold text-lg text-grey-darkest" for="phone">Phone</label>
+          <input class="border py-2 px-3 text-grey-darkest" id="contact-phone" name="phone" type="phone">
+      </div>
+      <div class="flex flex-col mb-4" 
+          <label class="mb-2 uppercase font-bold text-lg text-grey-darkest" for="company">Company</label>
+          <input class="border py-2 px-3 text-grey-darkest" id="contact-company" name="company" type="company">
+      </div>
+      <div class="flex flex-col mb-4" 
+          <label class="mb-2 uppercase font-bold text-lg text-grey-darkest" for="notes">Notes</label>
+          <input class="border py-2 px-3 text-grey-darkest" id="contact-notes" name="notes" type="textarea">
+      </div>
+      <div class="flex flex-col mb-4" 
+          <label class="mb-2 uppercase font-bold text-lg text-grey-darkest" for="twitter">Twitter</label>
+          <input class="border py-2 px-3 text-grey-darkest" id="contact-twitter" name="twitter" type="text">
+      </div> 
+        <button class="save-contact bg-blue hover:bg-blue-dark text-white font-bold py-2 px-4 rounded-full" type="submit">Add Contact</button>
+      </form>
+    
+    
+    <script src="./dist/bundle.js"></script>
+    <br/>
+  </div>
+  <div class="contact-list w-full bg-white rounded shadow-lg p-8 m-4 md:max-w-sm md:mx-auto"></div>
 
 </body>
 

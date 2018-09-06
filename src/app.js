@@ -1,35 +1,35 @@
 const storage = window.localStorage
 
 const renderContacts = () => {
-const contacts = JSON.parse(storage.getItem('contacts'))
-let div = document.querySelector('.contact-list')
-if (contacts) {
-    div.innerHTML = ''
-    const ul = document.createElement('ul')
-    contacts.forEach(contact => {
-        let li = document.createElement('li')
-        li.innerHTML = `
-          <div class="card">
-            <div class="image">
-              <img src="https://ca-address-book.herokuapp.com/images/pine.jpg" />
+  const contacts = JSON.parse(storage.getItem('contacts'))
+  let div = document.querySelector('.contact-list')
+  if (contacts) {
+      div.innerHTML = ''
+      const ul = document.createElement('div')
+      contacts.forEach(contact => {
+          let li = document.createElement('div')
+          li.innerHTML = `
+            <div class="card">
+              <div class="image">
+                <img src="https://www.coburgbanks.co.uk/wp-content/uploads/2015/08/linkedin-no-profile-picture-300x333.jpg" />
+              </div>
+              <div class="content">
+                <h1>${ contact.name }</h1>
+                <h2>${ contact.company }</h2>
+                <p>${ contact.notes }</p> 
+                ${ contact.email } | 
+                <a href="https://www.twitter.com/${ contact.twitter}">@${contact.twitter}</a>
+              </div>
             </div>
-            <div class="content">
-              <h1>${ contact.name }</h1>
-              <h2>${ contact.company }</h2>
-              <p>${ contact.notes }</p> 
-              ${ contact.email } | 
-              <a href="https://www.twitter.com/${ contact.twitter}">@${contact.twitter}</a>
-            </div>
-          </div>
-       `
-        ul.appendChild(li)
-      })
+        `
+          ul.appendChild(li)
+        })
 
-      div.appendChild(ul) 
-    } else { 
-      div.innerHTML = '<p>You have no contacts in your address book</p>' 
-    }
+        div.appendChild(ul) 
+  } else { 
+        div.innerHTML = '<p>You have no contacts in your address book</p>' 
   }
+}
   
 
 document.addEventListener('DOMContentLoaded', () =>{
@@ -65,6 +65,5 @@ document.addEventListener('DOMContentLoaded', () =>{
         storage.setItem('contacts', JSON.stringify(contacts))
         renderContacts()
         addContactForm.reset()
-    })
     })
 })
