@@ -11,9 +11,9 @@
 
 <body class="bg-grey-light">
     <div class="container mx-auto font-sans text-lg leading-normal my-8 px-8 text-left">
-      <div class="w-full max-w-md" onclick="hideForm()" >
+      <div class="w-full max-w-md" >
       <h1 class="font-sans text-4xl uppercase text-center">Contacts</h1>
-    <div class="mb-2 pt-2 text-center">
+    <div class="mb-2 pt-2 text-center"onclick="hideForm()">
       <button class="add-contact bg-blue hover:bg-blue-dark text-white font-bold py-2 px-4 rounded text-center">Add Contact</button>
     </div>
     <div id="myForm"class="bg-teal mx-auto max-w-md shadow-lg rounded-lg overflow-hidden px-8">
@@ -39,18 +39,18 @@
 
   </div>
 
-  <script>
-    function hideForm() {
-      var x = document.getElementById("myForm");
-      if (x.style.display === "none") {
-          x.style.display = "block";
-      } else {
-          x.style.display = "none";
-      }
-  }
-  </script>
-    
 </div>
+
+<script>
+  function hideForm() {
+    var x = document.getElementById("myForm");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+}
+</script>
   
   
   <div class="contact-list">
