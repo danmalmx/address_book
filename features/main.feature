@@ -32,7 +32,6 @@ Feature: Create contacts
     And I fill in "Notes" with "A really awsome guy :-)"
     And I fill in "Twitter" with "johndoe"
     And I click "Save contact"
-    When I click "Add contact"
     Then I fill in "Name" with "Jane Doe"
     And I fill in "Email" with "jane@doe.com"
     And I fill in "Phone" with "01111111111"
