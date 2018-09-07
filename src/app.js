@@ -36,6 +36,7 @@ const renderForm = () => {
     let main = document.querySelector('.main')
     let wrapper = document.createElement('div')
     wrapper.innerHTML = `
+        <h3>New Contact Form</h3>
         <form class="new-contact-form mb-6" action="#">
         <div class="flex flex-col mb-4" 
                 <label class="mb-2 uppercase font-bold text-lg text-grey-darkest" for="name">Name</label>
@@ -62,7 +63,7 @@ const renderForm = () => {
             <input class="border py-2 px-3 text-grey-darkest" id="contact-twitter" name="twitter" type="text">
         </div> 
             <div>    
-            <button class="save-contact bg-blue hover:bg-blue-dark text-white font-bold py-2 px-4 rounded-full" type="submit">Save Contact</button>
+            <button class="save-contact bg-blue hover:bg-blue-dark text-white font-bold py-2 px-4 rounded-full align-center" type="submit">Save Contact</button>
             </div>
         </form>    
       `

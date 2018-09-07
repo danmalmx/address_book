@@ -3,6 +3,18 @@ Feature: Create contacts
   In order to stay in touch with my friends
   I would like to be able to create a contact for them in my address book
 
+  Scenario:
+    Given I visit the site
+    Then I should see "Contacts"
+    And I should see "You have no contacts in your address book"
+    When I click "Add contact"
+    Then I should see "New Contact Form"
+    And I should see "Name"
+    And I should see "Email"
+    And I should see "Phone"
+    And I should see "Company"
+    And I should see "Notes"
+    And I should see "Twitter"
 
   Scenario: Create a new contact
     Given I visit the site
@@ -24,7 +36,7 @@ Feature: Create contacts
     Given I visit the site
     Then I should see "Contacts"
     And I should see "You have no contacts in your address book"
-    When I click "Add contact"
+    When I click "Add contact" 
     Then I fill in "Name" with "John Doe"
     And I fill in "Email" with "john@doe.com"
     And I fill in "Phone" with "0123456789"
@@ -32,7 +44,7 @@ Feature: Create contacts
     And I fill in "Notes" with "A really awsome guy :-)"
     And I fill in "Twitter" with "johndoe"
     And I click "Save contact"
-    When I click "Add contact"
+    #When I click "Add contact"
     Then I fill in "Name" with "Jane Doe"
     And I fill in "Email" with "jane@doe.com"
     And I fill in "Phone" with "01111111111"

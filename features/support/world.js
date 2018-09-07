@@ -8,7 +8,7 @@ class AddressBookWorld {
     constructor() {}
 
         async openHomePage() {
-            this.browser = await puppeteer.launch()
+            this.browser = await puppeteer.launch({headless: false, slowmo: 5000})
             this.page = await this.browser.newPage()
             await this.page.goto(HOME_PAGE)
         }
