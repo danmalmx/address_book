@@ -11,12 +11,12 @@
 
 <body class="bg-grey-light">
     <div class="container mx-auto font-sans text-lg leading-normal my-8 px-8 text-left">
-      <div class="w-full max-w-md">
+      <div class="w-full max-w-md" onclick="hideForm()" >
       <h1 class="font-sans text-4xl uppercase text-center">Contacts</h1>
     <div class="mb-2 pt-2 text-center">
-      <button class="bg-blue hover:bg-blue-dark text-white font-bold py-2 px-4 rounded text-center" class="add-contact">Add Contact</button>
+      <button class="add-contact bg-blue hover:bg-blue-dark text-white font-bold py-2 px-4 rounded text-center">Add Contact</button>
     </div>
-    <div class="bg-teal mx-auto max-w-md shadow-lg rounded-lg overflow-hidden px-8">
+    <div id="myForm"class="bg-teal mx-auto max-w-md shadow-lg rounded-lg overflow-hidden px-8">
       <form class="new-contact-form" class="bg-white shadow-md rounded px-8 pt-8 pb-8 mb-2" class="new-contact-form" action="#">
         <div class="mb-2 pt-2"> 
           <label class="block text-grey-darker text-lg font-bold mb-2 pt-2 leading-tight" for="name">Name</label>
@@ -35,12 +35,29 @@
       <div class="mb-4 pt-4 text-center">
         <input class="save-contact bg-blue hover:bg-blue-dark text-white font-bold py-2 px-4 rounded text-center" type="submit" value="Save contact">
       </div>
+
+
   </div>
-  </div>
+
+  <script>
+    function hideForm() {
+      var x = document.getElementById("myForm");
+      if (x.style.display === "none") {
+          x.style.display = "block";
+      } else {
+          x.style.display = "none";
+      }
+  }
+  </script>
+    
+</div>
   
   
   <div class="contact-list">
+  
   <script src="./dist/bundle.js"></script>
+
+
 
 
 </body>
